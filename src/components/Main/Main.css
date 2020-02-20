@@ -1,6 +1,22 @@
 .Main {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: #57467b;
   padding: 2rem 3rem;
+  padding-bottom: 0;
   border-top-left-radius: 100px;
+}
+
+.resultContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1;
+  margin: 3rem 0;
+}
+
+.cellContainer {
+  flex-grow: 1;
 }

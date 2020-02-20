@@ -20,3 +20,7 @@
   width: 20%;
   background-color: #3dc272;
 }
+
+.disabled {
+  background-color: #8b8b8b;
+}

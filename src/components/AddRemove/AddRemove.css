@@ -1,0 +1,9 @@
+.AddRemove {
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.AddRemove:hover {
+  background-color: rgba(255, 240, 27, 0.3);
+}

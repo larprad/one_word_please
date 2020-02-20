@@ -1,0 +1,16 @@
+.Saved {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+  max-height: 250px;
+  background-color: #8b8b8b;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 300px;
+}
+
+.savedTitle {
+  width: 100%;
+  text-align: center;
+  margin: 1rem;
+}
