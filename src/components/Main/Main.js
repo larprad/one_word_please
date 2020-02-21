@@ -8,10 +8,10 @@ class Main extends React.Component {
   render() {
     return (
       <div className="Main">
-        <Header />
+        <Header setInput={this.props.setInput} />
         <div className="resultContainer">
-          <Result />
-          <Saved />
+          <Result saveWord={this.props.saveWord} results={this.props.results} />
+          <Saved removeWord={this.props.removeWord} saved={this.props.saved} />
         </div>
       </div>
     );

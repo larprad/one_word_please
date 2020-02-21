@@ -4,9 +4,10 @@
   max-height: 600px;
   background-color: #faa916;
   border-top-right-radius: 1rem;
-  border-top-left-radius: 300px;
+  border-top-left-radius: 150px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   /* flex-grow: 1; */
 }
@@ -15,4 +16,12 @@
   width: 100%;
   text-align: center;
   margin: 1rem;
+}
+
+.cellContainer {
+  overflow-y: scroll;
+}
+
+.cellContainer::-webkit-scrollbar {
+  display: none;
 }

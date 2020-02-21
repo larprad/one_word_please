@@ -1,12 +1,13 @@
 .Saved {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 30%;
   max-height: 250px;
   background-color: #8b8b8b;
   border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 300px;
+  border-bottom-right-radius: 150px;
 }
 
 .savedTitle {

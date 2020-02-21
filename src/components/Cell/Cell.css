@@ -9,6 +9,10 @@
   margin: 1rem;
 }
 
+.saved {
+  background-color: #333333;
+}
+
 .cellText {
   padding: 1rem 2rem;
 }

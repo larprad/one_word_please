@@ -11,7 +11,7 @@ class Header extends React.Component {
           <h1>&nbsp;&nbsp;&nbsp;Word</h1>
           <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please</h1>
         </div>
-        <TextInput />
+        <TextInput setInput={this.props.setInput} />
       </div>
     );
   }

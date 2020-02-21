@@ -5,13 +5,11 @@ import WordCounter from '../WordCounter/WordCounter';
 class Slider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 8 };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    console.log(e.target.value);
-    this.setState({ value: e.target.value });
+    this.props.setCount(e.target.value);
   }
 
   render() {
@@ -20,12 +18,13 @@ class Slider extends React.Component {
         <input
           onChange={this.handleChange}
           type="range"
+          step="1"
           min={this.props.min}
           max={this.props.max}
-          value={this.state.value}
+          value={this.props.count}
           className="sliderInput"
         />
-        <WordCounter maxWords={this.state.value} />
+        <WordCounter maxWords={this.props.count} />
       </div>
     );
   }

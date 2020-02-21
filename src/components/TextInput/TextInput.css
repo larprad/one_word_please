@@ -7,6 +7,7 @@
 
 input {
   border: none;
+  box-sizing: border-box;
   background-image: none;
   background-color: transparent;
   -webkit-box-shadow: none;
@@ -14,7 +15,8 @@ input {
   box-shadow: none;
   width: 100%;
   outline: none;
-  font-size: 4rem;
+  font-size: 6rem;
   color: white;
   margin-bottom: 2px;
+  padding-left: 5rem;
 }

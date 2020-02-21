@@ -20,7 +20,7 @@ h2 {
 
 h3 {
   font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.75);
 }
@@ -36,5 +36,6 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   flex-wrap: wrap;
 }
