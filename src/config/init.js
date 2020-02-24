@@ -6,17 +6,11 @@ export const init = {
     { name: 'Sounds like', active: false, value: 'sl=', enabled: 'true' },
     { name: 'Same meaning', active: false, value: 'ml=', enabled: 'true' },
     {
-      name: 'Describe [adj]',
+      name: 'Describe',
       active: false,
       value: 'rel_jjb=',
       enabled: 'true'
     },
-    {
-      name: 'Describe [noun]',
-      active: false,
-      value: 'rel_jja=',
-      enabled: 'true'
-    }
   ],
 
   defaultCount: 6,
