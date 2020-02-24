@@ -38,7 +38,8 @@ class App extends React.Component {
     this.setState({ searchTerms: filtered }, () => this.search());
   }
   buildRequest() {
-    let request = 'https://api.datamuse.com/words?';
+    let request =
+      'https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?';
     request +=
       this.state.searchTerms
         .map((x, index) => {
@@ -56,7 +57,9 @@ class App extends React.Component {
   search() {
     fetch(this.buildRequest())
       .then(response => response.json())
-      .then(response => this.setState({ results: response }))
+      .then(response => {
+        this.setState({ results: response });
+      })
       .catch(e => new Error(e.message));
   }
   saveWord(word) {

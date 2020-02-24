@@ -19,7 +19,7 @@ export const init = {
     }
   ],
 
-  defaultCount: 6,
+  defaultCount: 12,
 
   getInitValues() {
     return this.buttons.filter(x => x.active).map(x => x.value);
