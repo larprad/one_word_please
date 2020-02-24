@@ -10,10 +10,10 @@ export const init = {
       active: false,
       value: 'rel_jjb=',
       enabled: 'true'
-    },
+    }
   ],
 
-  defaultCount: 12,
+  defaultCount: 6,
 
   getInitValues() {
     return this.buttons.filter(x => x.active).map(x => x.value);

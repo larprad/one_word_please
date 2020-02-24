@@ -1,24 +1,24 @@
 .Slider {
+  width: 100%;
   margin: 3rem 0;
   margin-bottom: 1rem;
   pointer-events: all;
 }
 
 .sliderInput {
+  min-width: 100%;
   -webkit-appearance: none; /* Override default CSS styles */
-  appearance: none;
-  width: 100%; /* Full-width */
   height: 0.5rem; /* Specified height */
   border-radius: 0.25rem;
   background: white; /* Grey background */
   outline: none; /* Remove outline */
+  width: 10px !important;
 }
 
 .sliderInput::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  width: 3rem; /* Set a specific slider handle width */
-  height: 3rem; /* Slider handle height */
+  width: 2.5rem; /* Set a specific slider handle width */
+  height: 2.5rem; /* Slider handle height */
   background: #f46036; /* Green background */
   cursor: pointer; /* Cursor on hover */
   border-radius: 50%;

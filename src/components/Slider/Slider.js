@@ -16,13 +16,13 @@ class Slider extends React.Component {
     return (
       <div className="Slider">
         <input
-          onChange={this.handleChange}
           type="range"
+          className="sliderInput"
           step="1"
+          onChange={this.handleChange}
           min={this.props.min}
           max={this.props.max}
           value={this.props.count}
-          className="sliderInput"
         />
         <WordCounter maxWords={this.props.count} />
       </div>
@@ -32,7 +32,7 @@ class Slider extends React.Component {
 
 Slider.defaultProps = {
   min: 1,
-  max: 30
+  max: 25
 };
 
 export default Slider;
