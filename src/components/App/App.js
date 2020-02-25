@@ -1,17 +1,18 @@
-import React from 'react';
-import './App.css';
-import Sidebar from '../Sidebar/Sidebar';
-import Main from '../Main/Main';
-import { init } from '../../config/init';
+import React from "react";
+import "./App.css";
+import Sidebar from "../Sidebar/Sidebar";
+import Main from "../Main/Main";
+import { init } from "../../config/init";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       searchTerms: init.getInitValues(),
-      input: '',
+      input: "",
       results: [],
       saved: [],
+      loading: false,
       count: init.defaultCount
     };
     this.setSearchTerm = this.setSearchTerm.bind(this);
@@ -39,26 +40,34 @@ class App extends React.Component {
   }
   buildRequest() {
     let request =
-      'https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?';
+      "https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?";
     request +=
       this.state.searchTerms
         .map((x, index) => {
           if (index === 0) {
             return x + this.state.input;
           } else {
-            return '&' + x + this.state.input;
+            return "&" + x + this.state.input;
           }
         })
-        .join('') +
-      '&max=' +
+        .join("") +
+      "&max=" +
       this.state.count;
     return request;
   }
   search() {
+    this.setState({ loading: true });
     fetch(this.buildRequest())
-      .then(response => response.json())
       .then(response => {
-        this.setState({ results: response });
+        console.log(response);
+        if (response.status === 429) {
+          this.setState({ results: [], loading: false });
+          alert("Too many request, please wait a bit.");
+        }
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ results: response, loading: false });
       })
       .catch(e => new Error(e.message));
   }
@@ -92,6 +101,7 @@ class App extends React.Component {
           saved={this.state.saved}
           results={this.state.results}
           setInput={this.setInput}
+          load={this.state.loading}
         />
       </div>
     );

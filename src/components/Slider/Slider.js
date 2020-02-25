@@ -22,7 +22,7 @@ class Slider extends React.Component {
           onChange={this.handleChange}
           min={this.props.min}
           max={this.props.max}
-          value={this.props.count}
+          defaultValue={this.props.count}
         />
         <WordCounter maxWords={this.props.count} />
       </div>
