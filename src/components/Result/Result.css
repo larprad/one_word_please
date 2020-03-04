@@ -1,13 +1,17 @@
 .Result {
   width: 100%;
   height: 70%;
-  max-height: 600px;
+  max-height: 400px;
+  position: relative;
   background-color: #faa916;
   border-top-right-radius: 1rem;
   border-top-left-radius: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: rgba(255, 255, 255, 0.258);
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
 
   /* flex-grow: 1; */
 }
@@ -19,9 +23,51 @@
 }
 
 .cellContainer {
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .cellContainer::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes load {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+.loading_ON {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #3dc27267;
+  animation: load 0.8s;
+  animation-iteration-count: infinite;
+}
+
+.loadingContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 5px solid rgba(0, 0, 0, 0.123);
+}
+
+
+

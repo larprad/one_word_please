@@ -6,7 +6,7 @@
   border-radius: 1rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  margin: 1rem;
+  margin: 0.5rem;
   animation: popin 0.3s;
   animation-iteration-count: 1;
 }
@@ -28,5 +28,5 @@
 }
 
 .cellText {
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
 }

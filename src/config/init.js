@@ -2,13 +2,19 @@
 
 export const init = {
   buttons: [
-    { name: 'Perfect ryhme', active: true, value: 'rel_rhy=', enabled: 'true' },
+    { name: 'Ryhme', active: false, value: 'rel_rhy=', enabled: 'true' },
     { name: 'Sounds like', active: false, value: 'sl=', enabled: 'true' },
-    { name: 'Same meaning', active: false, value: 'ml=', enabled: 'true' },
+    { name: 'Same meaning', active: true, value: 'rel_syn=', enabled: 'true' },
     {
       name: 'Describe',
       active: false,
       value: 'rel_jjb=',
+      enabled: 'true'
+    },
+    {
+      name: 'Antonym',
+      active: false,
+      value: 'rel_ant=',
       enabled: 'true'
     }
   ],

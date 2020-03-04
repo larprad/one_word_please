@@ -6,13 +6,12 @@
 }
 
 .sliderInput {
-  min-width: 100%;
+  width: 100%;
   -webkit-appearance: none; /* Override default CSS styles */
   height: 0.5rem; /* Specified height */
   border-radius: 0.25rem;
   background: white; /* Grey background */
   outline: none; /* Remove outline */
-  width: 10px !important;
 }
 
 .sliderInput::-webkit-slider-thumb {

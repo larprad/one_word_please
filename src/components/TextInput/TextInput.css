@@ -5,7 +5,7 @@
   margin-left: 2rem;
 }
 
-input {
+.TextInput input {
   border: none;
   box-sizing: border-box;
   background-image: none;
