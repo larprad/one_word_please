@@ -1,15 +1,17 @@
-import React from "react";
-import "./App.css";
-import Sidebar from "../Sidebar/Sidebar";
-import Main from "../Main/Main";
-import { init } from "../../config/init";
+import React from 'react';
+import './App.css';
+import Sidebar from '../Sidebar/Sidebar';
+import Main from '../Main/Main';
+import { init } from '../../config/init';
+
+// onewordplease.surge.sh
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       searchTerms: init.getInitValues(),
-      input: "",
+      input: '',
       results: [],
       saved: [],
       loading: false,
@@ -40,18 +42,18 @@ class App extends React.Component {
   }
   buildRequest() {
     let request =
-      "https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?";
+      'https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?';
     request +=
       this.state.searchTerms
         .map((x, index) => {
           if (index === 0) {
             return x + this.state.input;
           } else {
-            return "&" + x + this.state.input;
+            return '&' + x + this.state.input;
           }
         })
-        .join("") +
-      "&max=" +
+        .join('') +
+      '&max=' +
       this.state.count;
     return request;
   }
@@ -62,7 +64,7 @@ class App extends React.Component {
         console.log(response);
         if (response.status === 429) {
           this.setState({ results: [], loading: false });
-          alert("Too many request, please wait a bit.");
+          alert('Too many request, please wait a bit.');
         }
         return response.json();
       })

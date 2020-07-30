@@ -21,3 +21,11 @@
   margin-bottom: 2px;
   padding-left: 5rem;
 }
+
+.TextInput input::placeholder {
+  font-family: inherit;
+  font-family: 'Pacifico', cursive;
+  font-weight: lighter;
+  font-size: 0.5em;
+  opacity: 0.5;
+}

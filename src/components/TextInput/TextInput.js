@@ -12,7 +12,7 @@ class TextInput extends React.Component {
   render() {
     return (
       <div className="TextInput">
-        <input onChange={this.handleChange} type="text" placeholder="" />
+        <input onChange={this.handleChange} type="text" placeholder="Write a word here" />
       </div>
     );
   }
