@@ -15,7 +15,7 @@ class App extends React.Component {
       results: [],
       saved: [],
       loading: false,
-      count: init.defaultCount
+      count: init.defaultCount,
     };
     this.setSearchTerm = this.setSearchTerm.bind(this);
     this.removeSearchTerm = this.removeSearchTerm.bind(this);
@@ -34,15 +34,13 @@ class App extends React.Component {
     const updatedTerm = this.state.searchTerms;
     updatedTerm.push(term);
     this.setState({ searchTerms: updatedTerm }, () => this.search());
-    // this.setState({ searchTerms: [term] });
   }
   removeSearchTerm(term) {
-    const filtered = this.state.searchTerms.filter(x => !(x === term));
+    const filtered = this.state.searchTerms.filter((x) => !(x === term));
     this.setState({ searchTerms: filtered }, () => this.search());
   }
   buildRequest() {
-    let request =
-      'https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?';
+    let request = 'https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?';
     request +=
       this.state.searchTerms
         .map((x, index) => {
@@ -60,18 +58,19 @@ class App extends React.Component {
   search() {
     this.setState({ loading: true });
     fetch(this.buildRequest())
-      .then(response => {
+      .then((response) => {
         console.log(response);
         if (response.status === 429) {
           this.setState({ results: [], loading: false });
-          alert('Too many request, please wait a bit.');
+          alert('Too many requests, please wait a bit.');
         }
         return response.json();
       })
-      .then(response => {
+      .then((response) => {
+        console.log(response);
         this.setState({ results: response, loading: false });
       })
-      .catch(e => new Error(e.message));
+      .catch((e) => new Error(e.message));
   }
   saveWord(word) {
     let tmpSave = this.state.saved;
@@ -82,7 +81,7 @@ class App extends React.Component {
   }
   removeWord(word) {
     let tmpRemove = this.state.saved;
-    const filtered = tmpRemove.filter(x => !(x === word));
+    const filtered = tmpRemove.filter((x) => !(x === word));
     this.setState({ saved: filtered });
   }
   render() {
@@ -104,6 +103,7 @@ class App extends React.Component {
           results={this.state.results}
           setInput={this.setInput}
           load={this.state.loading}
+          input={this.state.input}
         />
       </div>
     );
